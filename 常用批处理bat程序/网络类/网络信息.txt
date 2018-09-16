@@ -1,0 +1,160 @@
+#========================
+# 接口配置
+#========================
+pushd interface 
+
+
+popd
+# 接口配置结束
+
+
+
+# ----------------------------------
+# IPHTTPS 配置
+# ----------------------------------
+pushd interface httpstunnel
+
+reset
+
+
+popd
+# IPHTTPS 配置的结尾
+
+
+
+#========================
+# IPv4 配置
+#========================
+pushd interface ipv4
+
+reset
+set global defaultcurhoplimit=64 taskoffload=enabled
+set interface interface="以太网(内核调试器)" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="WLAN" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="以太网" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="本地连接* 1" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="蓝牙网络连接" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="本地连接* 12" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="VMware Network Adapter VMnet1" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="VMware Network Adapter VMnet8" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+
+
+popd
+# IPv4 配置结束
+
+
+
+# ----------------------------------
+# IPv6 配置
+# ----------------------------------
+pushd interface ipv6
+
+reset
+set interface interface="以太网(内核调试器)" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="WLAN" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="以太网" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="本地连接* 1" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="本地连接* 3" forwarding=enabled advertise=enabled mtu=1280 nud=enabled ignoredefaultroutes=disabled
+set interface interface="蓝牙网络连接" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="本地连接* 12" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="VMware Network Adapter VMnet1" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+set interface interface="VMware Network Adapter VMnet8" forwarding=enabled advertise=enabled nud=enabled ignoredefaultroutes=disabled
+
+
+popd
+# IPv6 配置的结尾
+
+
+
+# ----------------------------------
+# ISATAP 配置
+# ----------------------------------
+pushd interface isatap
+
+
+
+popd
+# ISATAP 配置结束
+
+
+
+# ----------------------------------
+# 6to4 配置
+# ----------------------------------
+pushd interface 6to4
+
+reset
+
+
+
+popd
+# 6to4 配置结束
+
+
+
+# ----------------------------------
+# ISATAP 配置
+# ----------------------------------
+pushd interface isatap
+
+
+
+popd
+# ISATAP 配置结束
+
+
+#========================
+# 端口代理配置
+#========================
+pushd interface portproxy
+
+reset
+
+
+popd
+
+# 端口代理配置结束
+
+
+
+# ----------------------------------
+# TCP 配置
+# ----------------------------------
+pushd interface tcp
+
+reset
+
+设置全局 rss=enabled autotuninglevel=normal congestionprovider=default ecncapability=disabled 时间戳=disabled initialrto=3000 rsc=enabled nonsackrttresiliency=disabled maxsynretransmissions=2 fastopen=enabled fastopenfallback=enabled pacingprofile=off
+
+
+popd
+# TCP 配置结束
+
+
+
+# ----------------------------------
+# Teredo 配置
+# ----------------------------------
+pushd interface teredo
+set state type=disabled servername=win1711.ipv6.microsoft.com. servervirtualip=0.0.0.0
+
+
+
+popd
+# Teredo 配置结束
+
+
+
+# ----------------------------------
+# 6to4 配置
+# ----------------------------------
+pushd interface 6to4
+
+reset
+
+
+
+popd
+# 6to4 配置结束
+
+
